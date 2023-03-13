@@ -1,0 +1,54 @@
+<!Doctype HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" th:href="@{/css/bookstyles.css}" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<style>
+	  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+	</style>
+</head>
+
+<body>
+	
+	<div>
+		<h1>Books</h1>
+		<div class="booksList">
+			<div class="booksListEntry" th:each="b : ${bookList}">
+				<span class="bookTitle" th:text="${b.title}"></span>
+				<span class="authorName" th:text="${b.authorName}"></span>
+				<span class="datePublished" th:text="${b.publishedDate}"></span>
+				<span class="booksListEntryLinks">
+					<a th:href="@{/books/update/{id}(id=${b.id})}" class="button">Update</a>
+					<a th:href="@{/books/delete/{id}(id=${b.id})}" class="button">Delete</a>
+				</span>
+			</div>
+		</div>
+		<!-- <table class="booksList" th:each="b : ${bookList}">
+			<tr>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Published Date</th>
+			</tr>
+			<tr th:each="b : ${bookList}">
+				<td th:text="${b.title}"></td>
+				<td th:text="${b.authorName}"></td>
+				<td th:text="${b.publishedDate}"></td>
+				<td><a th:href="@{/books/update/{id}(id=${b.id})}">Update</a></td>
+				<td><a th:href="@{/books/delete/{id}(id=${b.id})}">Delete</a>
+			</tr>
+		</table> -->
+	</div>
+		
+	<div>
+		<h1>Insert Book</h1>
+		<form method="POST" th:action="@{/books}" th:object="${emptyBookFormObject}">
+			Title: <input type="text" th:field="*{title}"> <br/>
+			Author: <input type="text" th:field="*{authorName}"> <br/>
+			Published Date: <input type="date" th:field="*{publishedDate}"> <br/>
+			<input type="submit" value="Submit" />
+		</form>
+	</div>
+</body>
+</html>

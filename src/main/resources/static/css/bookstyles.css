@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+	font-family: 'Nunito Sans', sans-serif;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	background-color: #E5E0FF;
+}
+
+.booksList {
+	padding: 10px 5px;
+	overflow: scroll;
+	width: 550px;
+	min-height: 100px;
+	max-height: 300px;
+	background-color: #7286D3;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	border-radius: 10px;
+}
+
+.booksList > .booksListEntry {
+	padding: 6px 15px;
+	margin: 4px;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 8px;
+	background-color: #FFF2F2;	
+	
+}
+
+.booksListEntryLinks {
+	visibility: hidden;
+}
+
+.booksListEntry:hover > .booksListEntryLinks {
+	visibility: visible;
+}
+
+
+.button {
+	padding: 4px;
+	border-radius: 5px;
+	background-color: #8EA7E9;
+	text-decoration: none;
+	color: #7286D3;
+}
+
+.button:hover {
+	padding: 4px;
+	border-radius: 5px;
+	background-color: #7286D3;
+	text-decoration: none;
+	color: #FFF2F2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
