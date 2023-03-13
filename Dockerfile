@@ -8,6 +8,6 @@ RUN mvn -f /usr/pom.xml clean package
 
 # Exec(?) stage
 FROM amazoncorretto:17
-COPY --from=build /usr/target/seiji-akakabe-a1-0.0.1-SNAPSHOT.jar /usr/booba.jar
+COPY --from=build /usr/target/seiji-akakabe-a1-0.0.1-SNAPSHOT.jar /usr/boo.jar
 EXPOSE 8080
-CMD [ "java", "-jar", "/usr/booba.jar" ]
+CMD [ "java", "-jar", "/usr/boo.jar" ]
